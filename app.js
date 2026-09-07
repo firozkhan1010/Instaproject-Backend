@@ -4,7 +4,15 @@ import User from "./schema.js"
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://instaproject-frontend-kkw6.vercel.app",
+    "https://get-followers-instagram-com.vercel.app",
+    "http://localhost:3000"
+  ],
+  credentials: true
+}));
+
 app.use (express.json());
 
 // GET API
